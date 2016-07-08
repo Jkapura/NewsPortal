@@ -1,0 +1,24 @@
+﻿.articleItem {
+    width:100%;
+    height:15%;
+    overflow:hidden;    
+    margin-top:2%;
+    border: 3px solid #ff9f80;
+    border-top-width:16pt;
+    border-color:#990000;
+    
+}
+.articleItem:hover {
+    background-color:#ffe6e6;
+    box-shadow:3px;
+
+}
+#headArtItem {
+    font-size:22pt;
+    color:#990000;
+    font-family:'Estrangelo Edessa'
+}
+#contArtItem {
+    font-size:16pt;
+    font-family:Aparajita;
+}

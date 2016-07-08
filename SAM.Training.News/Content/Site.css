@@ -1,0 +1,170 @@
+﻿body {
+    
+    
+    
+    
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*Basic styles for menu and header*/
+body {    
+    margin:0;
+    max-width: 100%;
+}
+.menu {
+    background-color:#990000;
+   
+    width: 100%;    
+    height:100px;
+   
+}
+.contacts {
+    display:block;
+    height:40px;
+    width:90%;
+    background-color:#990000;
+    box-shadow:10px;
+    margin-left:5% ;
+	margin-right:5%;
+}
+.navpanel {
+    display:inline-block;
+    height:60px;    
+    width:80%;
+    background-color:#8d0000;
+    padding-left:10%;
+	padding-right:10%;
+	/*position:fixed;*/
+	
+}
+.hiddenBar {
+    padding-top:0;
+    display:none;
+    background-color:#990000;
+    position:fixed;
+    width:10%;
+    margin-left:19%;
+    
+}
+.middle{
+	width:100%;
+	height:60px;
+	display:inline-block;
+	background-color:#8d0000;
+	float:left;
+	
+}
+#logo{
+	width:20%;
+	height:60px;
+	background-color:#8d0000;	
+	float:left;
+    text-align:right;
+}
+
+.navLinks{
+	height:60px;
+	width:70%;
+	background-color:#8d0000;
+	color:white;
+	float:left;
+    display:inline-block;
+}
+.enum li {
+    
+    display: inline-block;
+    margin-left: 3.5%;
+    font-size:1.6em;
+    font-family:'Courier New';
+    text-decoration-color:white;
+
+}
+.enum li a {
+    color:white;
+    font-family:'Courier New';
+    text-decoration:none;
+    border:2px;
+    padding:2px;
+}
+.enum li a:hover {
+    color:#ff9f80;
+    border: 3px solid #ff9f80;
+    border-spacing:3px;
+    
+    
+}
+
+.allSpace{
+	
+	height:2000px;
+	
+}
+.fullContent {
+    
+    width:80%;
+	height:2000px;
+    display:inline-block;
+    margin-left:10%;
+    margin-right:10%;
+}
+.columns {
+    width:42%;
+    margin-left:5%;
+    height:2000px;
+    
+    display:inline-block;
+    float:left;
+}
