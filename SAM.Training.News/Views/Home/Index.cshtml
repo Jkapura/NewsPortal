@@ -1,0 +1,42 @@
+﻿@using SAM.Training.News.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Styles/indexStyleSheet.css")" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Styles/indexStyleSheet.css")
+    <title>Index</title>
+</head>
+<body>
+    
+    @section Styles{
+                    
+        @Styles.Render("~/Styles/indexStyleSheet.css")
+                    }
+    @section inter{
+        <div class="columns">
+            @foreach (var i in ViewBag.Articles)
+            {
+            <div  class="articleItem">
+                   
+                <div id="headArtItem"><a href ="Home/ArticleView/@i.id">@i.head</a></div>                  
+                
+        
+            <div id="contArtItem">@i.content</div>
+        
+        </div>
+        }
+        </div>
+        <div class="columns"></div>
+        
+    }
+
+    
+    
+</body>
+</html>

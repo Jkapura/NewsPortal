@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "ArticleView";
+    
+}
+
+@section Styles{
+                    
+        @Styles.Render("~/Styles/ArticleStyleSheet.css")
+                }
+@section inter{
+        <p>@ViewBag.ID</p>
+        @*<div id = "articleHead">ViewData["head"]</div>*@
+        @*<div id="articleAuthor">ViewBag.Article.author</div>
+        <div id = "articleContent">ViewBag.Article.content</div>*@
+        
+    }
