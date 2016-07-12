@@ -7,10 +7,10 @@
                     
         @Styles.Render("~/Styles/ArticleStyleSheet.css")
                 }
-@section inter{
-        <p>@ViewBag.ID</p>
-        @*<div id = "articleHead">ViewData["head"]</div>*@
-        @*<div id="articleAuthor">ViewBag.Article.author</div>
-        <div id = "articleContent">ViewBag.Article.content</div>*@
+@section inter{       
         
+        <div id = "articleContent">@ViewBag.article.head</div>
+        <div id = "articleAuthor">@ViewBag.author.name</div>
+        <div id = "articleContent">@ViewBag.article.content</div>
+        <div id = "articleDate">@ViewBag.article.date</div>
     }

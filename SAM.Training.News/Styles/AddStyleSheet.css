@@ -1,0 +1,26 @@
+﻿body {
+}
+.allContent {
+    width:80%;
+	height:40%;
+    display:inline-block;
+    margin-left:10%;
+    margin-right:10%;
+    background-color:green;
+    padding:3em;
+    align-content:center;
+    
+}
+#headF {
+    font-size:2.5em;
+    font-family:'Courier New';
+    font-weight:bold;
+    text-align:center;
+}
+.allFields {
+    width:40%;
+    height:400px;
+   
+    background-color:blue;
+
+}

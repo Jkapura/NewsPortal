@@ -14,7 +14,11 @@
 <body>
     <div>        
         <div class="menu">
-            <div class="contacts">                
+            <div class="contacts">
+                <div class="addedPower">
+                    <div class="offerNews"><a href="Add/Index"><img src="~/Content/1468342350_special-offer.png" /></a></div>
+                    @*<div class="offerNews">@Html.ActionLink("","Index","Add")</div>*@
+                </div>                
             </div>
             <div class="navpanel">
 				<div class="middle">
@@ -24,13 +28,13 @@
                     
 					<div class="navLinks">
 						<ul class="enum">
-							<li class="aLight" class="alwActual">@Html.ActionLink("Home","","")</li>
-							<li class="aLight" class="alwActual">@Html.ActionLink("World","","")</li>
+							<li class="aLight">@Html.ActionLink("Home","","")</li>
+							<li class="aLight">@Html.ActionLink("World","","")</li>
 							<li class="aLight">@Html.ActionLink("Helth","","")</li>
 							<li class="aLight">@Html.ActionLink("Business","","")</li>
                             <li class="aLight">@Html.ActionLink("Sports","","")</li>
                             <li class="aLight">@Html.ActionLink("Tech","","")</li>
-                            <li class="aLight"class="alwActual">@Html.ActionLink("Wether","","")</li>
+                            <li class="aLight">@Html.ActionLink("Wether","","")</li>
 						</ul>
 					</div>
 					</div>
@@ -50,11 +54,11 @@
                     </div>
             <div class="fullContent">
 
-            <div class="columns">
+            
                 @RenderSection("Styles")
                 @RenderSection("inter")
 
-            </div>
+            
             
         </div>
         </div>

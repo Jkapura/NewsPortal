@@ -3,12 +3,40 @@
     height:15%;
     overflow:hidden;    
     margin-top:2%;
-    border: 3px solid #ff9f80;
-    border-top-width:16pt;
-    border-color:#990000;
+    background-color:#990000;
+    /*border: 3px solid #ff9f80;
+    border-top-width:16pt;*/
+    /*border-color:#990000;*/
     
+
 }
-.articleItem:hover {
+.navItem {
+    width:100%;
+    height:14%;
+    background-color:#990000;
+
+}
+.itemInter {
+    margin-left:2%;
+    margin-right:2%;
+    background-color:white;
+    width:96%;
+    height:82%;
+    
+    margin-bottom:2%;
+  
+}
+.itemIcon {
+    display:inline-block;
+    float:right;
+    padding:1.5%;
+    padding-right:3%;
+}
+#itemIcon {
+    float:left;
+    margin-left:2%;
+}
+.itemInter:hover {
     background-color:#ffe6e6;
     box-shadow:3px;
 
@@ -21,4 +49,12 @@
 #contArtItem {
     font-size:16pt;
     font-family:Aparajita;
+}
+.columns {
+    width:42%;
+    margin-left:5%;
+    height:2000px;
+    
+    display:inline-block;
+    float:left;
 }

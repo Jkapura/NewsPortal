@@ -1,4 +1,4 @@
-﻿@using SAM.Training.News.Models
+﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -23,12 +23,18 @@
             @foreach (var i in ViewBag.Articles)
             {
             <div  class="articleItem">
-                   
+                <div class="navItem">
+                    <div class="itemIcon"><img src="~/Content/1468352734_miscellaneous-30.png" /></div>
+                    <div class="itemIcon"><img src="~/Content/1468352941_pen-15.png" /></div>
+                    <div id="itemIcon"><img src="~/Content/1468353469_4.png" height="40px" width="40px"/ ></div>
+                    <div class="itemIcon"><img src="~/Content/1468353051_box-open-3d.png" /></div>
+                </div>
+                   <div class="itemInter">
                 <div id="headArtItem"><a href ="Home/ArticleView/@i.id">@i.head</a></div>                  
                 
         
             <div id="contArtItem">@i.content</div>
-        
+        </div>
         </div>
         }
         </div>
