@@ -8,41 +8,84 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="@Url.Content("~/Styles/indexStyleSheet.css")" rel="stylesheet" type="text/css" />
-    @Styles.Render("~/Styles/indexStyleSheet.css")
-    <title>Index</title>
+    
+   
+    <title>Hot News</title>
 </head>
 <body>
     
+
     @section Styles{
-                    
-        @Styles.Render("~/Styles/indexStyleSheet.css")
+        @Styles.Render("~/Content/themes/base/jquery-ui.css")            
+        @Styles.Render("~/Styles/IndexStyleSheet.css")
+        
+        @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+        @Scripts.Render("~/Scripts/jquery-ui-1.12.0.js")
+        @Scripts.Render("~/Scripts/moment.min.js")
+        @Scripts.Render("~/Scripts/jsRender.js")
+        @Scripts.Render("~/Scripts/controllers.js")
+        @Scripts.Render("~/Scripts/columnsScript.js")
+    
                     }
     @section inter{
+        <input type="hidden" id="selectedItemId" />
+        @*<div id="delDialog" ><p>Are you sure that you want to delete this article?</p></div> 
+        <div id="editDialog" ><p>Are you sure that you want to edit this article?</p></div> 
+        <div id="toArchiveDialog" ><p>Are you sure that you want to add this article to archive?</p></div> *@
         <div class="columns">
-            @foreach (var i in ViewBag.Articles)
-            {
-            <div  class="articleItem">
-                <div class="navItem">
-                    <div class="itemIcon"><img src="~/Content/1468352734_miscellaneous-30.png" /></div>
-                    <div class="itemIcon"><img src="~/Content/1468352941_pen-15.png" /></div>
-                    <div id="itemIcon"><img src="~/Content/1468353469_4.png" height="40px" width="40px"/ ></div>
-                    <div class="itemIcon"><img src="~/Content/1468353051_box-open-3d.png" /></div>
+        @foreach (var i in ViewBag.Categories)
+        { 
+            <div class="hotItems">  
+                <div class="hotItemsHead">
+                    <div class="headName">@i.name</div>
+                    <div class="moreNews"><a href="Home/GetCategory?category=@i.id">+</a></div>
+                </div>      
+            
+              
+            <script id="tmplForSingle" type="text/x-jsrender">
+                <div class="column1" itemid="@i.id">
+                    <div class="articleItem">
+                    <div class="itemInter">
+                    <div class="articlePict"></div>
+                    <div class="headArtItem">
+                        <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
+                    </div>          
+                    <div class="moreInform">
+                        <div class="date">{{:~parseDate(Date)}}</div>
+                        <div class="author"></div>
+                        <div class="category">@i.name</div>                        
+                    </div>
+                    <div class="contArtItem">{{:Content}}</div>                       
+                    </div>
+                        <a href="Home/ArticleView/{{:Id}}" class="button">Read more</a>
                 </div>
-                   <div class="itemInter">
-                <div id="headArtItem"><a href ="Home/ArticleView/@i.id">@i.head</a></div>                  
-                
+            </div>  
+            </script> 
+                <div class="result" data-itemid="@i.id"><div id="resultForSngl" itemid="@i.id"></div></div>    
+            <div class="column2"itemid="@i.id">
+                <div class="listContainer">
+                    <div class="list">
+                        <script id="myTml" type="text/x-jsrender">
+
+                        <div class="listItem">
+                                                      
+                            <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
+                        </div><br />
+                         </script>
+                        <div class="listText">@Html.ActionLink("Read also","GetCategory","Home")</div>  
+                        <div class="listResult" data-itemid="@i.id"><div id="resultListItem"  itemid="@i.id"></div></div>
+                        
+                    </div>
+                </div>
+            </div>
+           
         
-            <div id="contArtItem">@i.content</div>
         </div>
-        </div>
-        }
-        </div>
-        <div class="columns"></div>
+    
         
     }
-
+</div>
     
-    
+}    
 </body>
 </html>

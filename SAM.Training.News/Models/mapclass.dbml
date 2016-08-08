@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EpoNews" Class="mapclassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=SCXXXX-W7X64;Initial Catalog=EpoNews;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EpoNewsConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Article" Member="Articles">
-    <Type Name="Article">
+    <Type Name="Article" Id="ID2">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="authorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -38,4 +38,42 @@
       <Column Name="head" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.ArchiveView" Member="ArchiveViews">
+    <Type Name="ArchiveView">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="head" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="Statistics">
+    <Type Name="Statistics" Id="ID1">
+      <Column Name="CountArchiveNews" Type="System.Int32" CanBeNull="false" />
+      <Column Name="CountHotNews" Type="System.Int32" CanBeNull="false" />
+      <Column Name="CountTotal" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetTotalStatistic" Method="GetTotalStatistic">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.CountArchiveNews" Method="CountArchiveNews" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CountHotNews" Method="CountHotNews" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CountTotal" Method="CountTotal" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetByCategory" Method="GetByCategory">
+    <Parameter Name="categoryId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.GetHotNews" Method="GetHotNews">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.GetWeekStatistic" Method="GetWeekStatistic">
+    <ElementType IdRef="ID1" />
+  </Function>
 </Database>

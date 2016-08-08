@@ -1,37 +1,64 @@
 ﻿$(function () {
     $(window).scroll(function () {
         var top = $(document).scrollTop();
-        if (top < 100)
+        if (top < 160) {
             $(".navpanel").css({ top: '0', position: 'relative' });
+            $(".hdnBar").css({marginTop:'160'});
+        }
         else $(".navpanel").css({ top: '0', position: 'fixed' });
 
     });
+    $("#hoverCategory").mouseenter(function () {
+        $("#hoverCategory").css({
+            "backgroundColor": "#86b300",
+            "color": "white"
+        });
+    })
+    $("#hoverCategory").mouseleave(function () {
+        $("#hoverCategory").css({
+            "backgroundColor": "#f6f6ee",
+            "color": "#222211"
+        });
+    })
+    //$("#hoverCategory").click(function () {
+    //    $(".hiddenBar").slideToggle();
+    //})
+    $(".offerNews").click(function () {
+        $(".addHdnNewsPanel").slideToggle("slow");
+    });    
 });
-
-function windowSize() {
-    if ($(window).width() <= '1600') {
-
-        $('.aLight').hide();
-    }
-    else {
-        $(".aLight").show();
-    }
-}
-$(window).on('load resize', windowSize);
-$(function () {
-    $("#logo").click(function () {
-        $(".hiddenBar").slideToggle("slow");
-        var top = $(document).scrollTop();
-        if (top < 100)
-            $(".hiddenBar").css({ top: '100', position: 'fixed' });
-        else $(".hiddenBar").css({ top: '-30', position: 'fixed' });
+function mouseMove() {
+    $("#hoverCategory").css({
+        "backgroundColor": "#86b300",
+        "color": "white"
     });
-});
+    $(".hiddenBar").slideDown();
+    var top = $(document).scrollTop();
+}
+function mouseLeave() {   
+    $("#hoverCategory").css({
+        "backgroundColor": "#f6f6ee",
+        "color": "#222211"
+    });
+    
+}
+function outBar() {
+    $(".hiddenBar").slideUp();
+}
+function cssStay() {
+    $("#hoverCategory").css({
+        "backgroundColor": "#86b300",
+        "color": "white"
+    });
+}
+//function windowSize() {
+//    if ($(window).width() <= '1600') {
 
-//function hiddenBarScroll(){
-//    var top = $(document).scrollTop();
-//    if (top < 100)
-//        $(".navpanel").css({ top: '0', position: 'relative' });
-//    else 
-//        $(".navpanel").css({ top: '60', position: 'fixed' });
+//        $('.aLight').hide();
+//    }
+//    else {
+//        $(".aLight").show();
+//    }
 //}
+//$(window).on('load resize', windowSize);
+

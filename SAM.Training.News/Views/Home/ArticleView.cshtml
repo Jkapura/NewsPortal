@@ -4,13 +4,48 @@
 }
 
 @section Styles{
-                    
+         @Styles.Render("~/Content/themes/base/jquery-ui.css")               
         @Styles.Render("~/Styles/ArticleStyleSheet.css")
-                }
-@section inter{       
+        @Styles.Render("~/")
+        @Scripts.Render("~/Scripts/jquery-ui-1.12.0.min.js")
+        @Scripts.Render("~/Scripts/controllers.js")
+        @Scripts.Render("~/Scripts/articleView.js")
         
-        <div id = "articleContent">@ViewBag.article.head</div>
-        <div id = "articleAuthor">@ViewBag.author.name</div>
-        <div id = "articleContent">@ViewBag.article.content</div>
-        <div id = "articleDate">@ViewBag.article.date</div>
+        
+                }
+@section inter{   
+    <div id="deleteDialog">Are you sure that you want delete this article</div>   
+    <div id="editDialog">Are you sure that you want edit this article</div>
+    <div id="toArchiveDialog">Are you sure that you want add to Archive this article</div> 
+        <div class="space">
+            <div class="options">
+                <div class="dropdownOptions">
+                  <button class="dropbtnOptions"><img src="~/Content/options.png" /></button>
+                  <div class="dropdown-content-Options">
+                      
+                          <a class="delete"><img src="~/Content/1470669686_delete.png" class="delete"/></a>
+                          <a class="edit"><img src="~/Content/1470669717_note.png" class="edit"/></a>
+                          <a class="toArchive"><img src="~/Content/1470669696_folder.png" class="toArchive"/></a>
+                          <a>4</a>
+                     
+                    
+                  </div>
+                </div>
+
+            </div>
+            <div class="middleContainer">
+            <div class="navPath"><div class="pathItem"></div></div>
+            <div id="hdnId">@ViewBag.article.id</div>
+            <div class="itemIcon"></div>
+            <div id = "articleHead">@ViewBag.article.head</div>
+            <div id = "articleAuthor">
+            
+                    @ViewBag.author
+            
+            </div>
+            <div id = "articleContent">@ViewBag.article.content
+                <div id = "articleDate">@ViewBag.article.date</div>
+            </div>
+            </div>
+            </div>
     }

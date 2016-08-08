@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "CategoryNews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CategoryNews</h2>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    
+   
+    <title>@ViewBag.category.name News</title>
+</head>
+<body>
+    
+
+    @section Styles{
+        @Styles.Render("~/Content/themes/base/jquery-ui.css")            
+        @Styles.Render("~/Styles/CategoryStyleSheet.css")
+        
+        @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+        @Scripts.Render("~/Scripts/jquery-ui-1.12.0.js")
+        @Scripts.Render("~/Scripts/moment.min.js")
+        @Scripts.Render("~/Scripts/jsRender.js")        
+        @Scripts.Render("~/Scripts/categoryScript.js")
+    
+                    }
+    @section inter{
+        <input type="hidden" id="selectedItemId" />
+        <div id="categoryId" >@ViewBag.category.id</div>
+        @*<div id="delDialog" ><p>Are you sure that you want to delete this article?</p></div> 
+        <div id="editDialog" ><p>Are you sure that you want to edit this article?</p></div> 
+        <div id="toArchiveDialog" ><p>Are you sure that you want to add this article to archive?</p></div> *@
+        <div class="columns">
+            <div class="middleContent">
+            <div class="hotItems">  
+                <div class="hotItemsHead">
+                    <div class="headName">@ViewBag.category.name</div>
+                   
+                </div>      
+            
+              
+            <script id="tmplForSingle" type="text/x-jsrender">
+                <div class="column1" itemid="">
+                    <div class="articleItem">
+                    <div class="itemInter">
+                    <div class="articlePict"></div>
+                    <div class="headArtItem">
+                        <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
+                    </div>          
+                    <div class="moreInform">
+                        <div class="date">{{:~parseDate(Date)}}</div>
+                        <div class="author"></div>
+                        <div class="category">@ViewBag.category.name</div>                        
+                    </div>
+                    <div class="contArtItem">{{:Content}}</div>                       
+                    </div>
+                       
+                </div>
+            </div>  
+            </script> 
+                <div  ><div id="resultForSngl" itemid="@ViewBag.category.id"></div></div>    
+            @*<div class="column2"itemid="">
+                <div class="listContainer">
+                    <div class="list">
+                        <script id="myTml" type="text/x-jsrender">
+                        <div class="listItem">
+                                                      
+                            <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
+                        </div><br />
+                         </script>
+                        
+                        <div class="listResult" data-itemid=""><div id="resultListItem"  itemid="@ViewBag.category.id"></div></div>
+                        
+                    </div>
+                </div>
+            </div>*@
+           
+        
+        </div>
+    
+        
+    }
+</div>
+ </div>   
+}    
+</body>
+</html>

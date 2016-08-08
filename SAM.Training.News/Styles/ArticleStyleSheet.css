@@ -1,5 +1,122 @@
-﻿body {
+﻿
+.space {
+    
+    width: 100%;
+    
+}
+
+.middleContainer {
+    width: 60%;
+    margin-left:20%;
+    margin-right:20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #f6f6ee;
+}
+.options {
+    float:left;
+    margin-left: 10%;
+    margin-top: 50pt;
+    width: 40pt;
+    height: 130pt;
+    position: fixed;
+
+}
+.dropbtnOptions {
+    
+border: none;
+    
+cursor: pointer;
+    
+background-color: #b8b894;
+}
+    .dropbtnOptions img {
+        width: 30pt;
+        height: 30pt;
+    }
+.dropdownOptions {
+    position: relative;
+    display: inline-block;
+    
+
+}
+
+.dropdown-content-Options {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 40pt;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content-Options a {
+    color: black;
+    text-decoration: none;
+   
+    display: block;
+}
+
+.dropdown-content-Options a:hover {background-color: #f1f1f1}
+
+.dropdownOptions:hover .dropdown-content-Options {
+    display: block;
+}
+
+.dropdownOptions:hover .dropbtnOptions {
+    background-color: #f9f9f9;
+    min-width: 40pt;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 #articleHead {
-    background-color:green;
+    
+text-align: left;
+    
+font-size:28pt;
+    
+color: #33331a;
+    
+font-family: 'Estrangelo Edessa';
+    
+padding: 1%;
+    
+margin-left: 7%;
+    
+word-break: break-all;
+}
+#articleAuthor {
+    background-color:black;
+}
+#articleContent {
+    border-top: 3px outset #33331a;
+    padding:3%;
+    font-size: 13pt;
+    word-break: break-all;
+    width: 81%;
+    margin-left: 6%;
+}
+#articleDate {
+    font-size:12pt;
+    float:right;
+    padding:1%;
+}
+.navPath {
+    height: 22pt;
+    background-color:#eeeedd;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 4%;
+}
+.pathItem {
+    height:100%;
+    width:40pt;
+}
+#hdnId {
+    display:none;
+}
+.itemIcon {
+    background-color:grey;
+    width:90%;
+    margin-left:5%;
+    height: 150pt;
+    margin-bottom: 5%;
 }

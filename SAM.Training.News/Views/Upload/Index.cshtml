@@ -1,0 +1,35 @@
+﻿@model SAM.Training.News.Models.FileUploaded
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2>Index</h2>
+@section Styles{ 
+      
+        @Styles.Render("~/Content/themes/base/jquery-ui.css")  
+        @Styles.Render("~/Styles/UploadStyleSheet.css")  
+        @Scripts.Render("~/Scripts/jquery-ui-1.12.0.min.js")        
+        @Scripts.Render("~/Scripts/FileUpload/jquery.fileupload.js")
+        @Scripts.Render("~/Scripts/FileUpload/jquery.iframe-transport.js")    
+        @Scripts.Render("~/Scripts/uploadJs.js")
+}
+
+@section inter{ 
+<div class="space">
+    <div class="middleContainer">
+        <div class="nameLine"><div class="namePage"><div class="title">@Html.ActionLink("Add article","","")</div><div class="title">@Html.ActionLink("Upload article","","")</div></div></div>
+    <div id="countDialog"></div>
+    <div id="notValidDialog"><div class="errorText"></div></div>
+    <div id="notXmlDialog">The type of Your document is incorrect. It must be <b>.xml</b>. </div>
+    <div class="title">
+        <h1>You can upload your news using XML files.</h1>
+    </div>
+    <div>       
+        <input type="file" name="MyFile" id="fu-my-simple-upload-with-size" value="Choose the file" />
+        &nbsp;<a href="#" id="hl-start-upload-with-size">Start upload</a>
+    </div>
+        </div>
+</div>
+}

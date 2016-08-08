@@ -102,6 +102,68 @@ namespace SAM.Training.News.Models
 				return this.GetTable<HotNew>();
 			}
 		}
+		
+		public System.Data.Linq.Table<ArchiveView> ArchiveViews
+		{
+			get
+			{
+				return this.GetTable<ArchiveView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Statistics> Statistics
+		{
+			get
+			{
+				return this.GetTable<Statistics>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetTotalStatistic")]
+		public ISingleResult<Statistics> GetTotalStatistic()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Statistics>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CountArchiveNews", IsComposable=true)]
+		public System.Nullable<int> CountArchiveNews()
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CountHotNews", IsComposable=true)]
+		public System.Nullable<int> CountHotNews()
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CountTotal", IsComposable=true)]
+		public System.Nullable<int> CountTotal()
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetByCategory")]
+		public ISingleResult<Article> GetByCategory([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoryId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoryId);
+			return ((ISingleResult<Article>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetHotNews")]
+		public ISingleResult<Article> GetHotNews()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Article>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetWeekStatistic")]
+		public ISingleResult<Statistics> GetWeekStatistic()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Statistics>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Article")]
@@ -756,6 +818,168 @@ namespace SAM.Training.News.Models
 				if ((this._head != value))
 				{
 					this._head = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ArchiveView")]
+	public partial class ArchiveView
+	{
+		
+		private System.Nullable<int> _id;
+		
+		private System.Nullable<System.DateTime> _date;
+		
+		private string _head;
+		
+		private string _AuthorName;
+		
+		private string _CategoryName;
+		
+		public ArchiveView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
+		public System.Nullable<int> id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this._date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_head", DbType="VarChar(50)")]
+		public string head
+		{
+			get
+			{
+				return this._head;
+			}
+			set
+			{
+				if ((this._head != value))
+				{
+					this._head = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorName", DbType="VarChar(50)")]
+		public string AuthorName
+		{
+			get
+			{
+				return this._AuthorName;
+			}
+			set
+			{
+				if ((this._AuthorName != value))
+				{
+					this._AuthorName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CategoryName
+		{
+			get
+			{
+				return this._CategoryName;
+			}
+			set
+			{
+				if ((this._CategoryName != value))
+				{
+					this._CategoryName = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class Statistics
+	{
+		
+		private int _CountArchiveNews;
+		
+		private int _CountHotNews;
+		
+		private int _CountTotal;
+		
+		public Statistics()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountArchiveNews")]
+		public int CountArchiveNews
+		{
+			get
+			{
+				return this._CountArchiveNews;
+			}
+			set
+			{
+				if ((this._CountArchiveNews != value))
+				{
+					this._CountArchiveNews = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountHotNews")]
+		public int CountHotNews
+		{
+			get
+			{
+				return this._CountHotNews;
+			}
+			set
+			{
+				if ((this._CountHotNews != value))
+				{
+					this._CountHotNews = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountTotal")]
+		public int CountTotal
+		{
+			get
+			{
+				return this._CountTotal;
+			}
+			set
+			{
+				if ((this._CountTotal != value))
+				{
+					this._CountTotal = value;
 				}
 			}
 		}

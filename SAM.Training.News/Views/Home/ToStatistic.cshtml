@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ToStatistic";
+}
+
+<h2>ToStatistic</h2>
+@section Styles{
+    @Styles.Render("~/Styles/StatisticStyleSheet.css")}
+@section inter{
+    <div class ="space">
+        <div class="container">
+            <div class="subHead">Total statistics</div><br />
+            <div class ="Point">Added to Archive: </div><div class="Point">@ViewBag.totalStatistic.CountArchiveNews</div><br />
+            <div class ="Point">Added to Hot News: </div><div class="Point">@ViewBag.totalStatistic.CountHotNews</div><br />
+            <div class ="Point">Total: </div><div class="Point">@ViewBag.totalStatistic.CountTotal</div><br /><br />
+            <div class="subHead">Week statistics</div><br />
+            <div class ="Point">Added to Archive: </div><div class="Point">@ViewBag.weekStatistic.CountArchiveNews</div><br />
+            <div class ="Point">Added to Hot News: </div><div class="Point">@ViewBag.weekStatistic.CountHotNews</div><br />
+            <div class ="Point">Total: </div><div class="Point">@ViewBag.weekStatistic.CountTotal</div><br /><br />
+        </div>
+    </div>
+}

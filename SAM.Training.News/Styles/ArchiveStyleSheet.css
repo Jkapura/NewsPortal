@@ -1,0 +1,204 @@
+﻿.space {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #f6f6ee;
+    padding-bottom: 60pt;
+}
+.namePage {
+    height:25px;
+    background-color: #f6f6ee;
+    width: 85.5%;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+    border-bottom: 4px solid #86b300;
+}
+.title {
+    width: 60pt;
+    font-size: 16pt;
+    text-align: center;
+    border-bottom: 4px solid #33331a;
+    height:100%;
+    background-color:#ededde;
+    color:#434323;
+    font-family:'Estrangelo Edessa';
+}
+    .title:hover {
+        background-color:#86b300;
+        color:white;
+    }
+.spaceArch {
+    width: 85%;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+    color:#434323;
+    font-family:'Estrangelo Edessa';
+    background-color: #f6f6ee;
+}
+
+.headArch {
+    font-size: 16pt;
+    height: 25pt;
+    margin-top: 2%;
+    border-bottom: 2px solid #86b300;
+}
+.boxArch {
+}
+.boxForDropDown {
+    width:100%;
+    margin-left:30pt;
+    margin-top:1%;
+}
+.dropbtn {
+    background-color: #86b300;
+    color: white;
+    padding: 9px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 75px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content ul li {
+    color: black;
+    padding: 12px 0px;
+    margin-left: -15pt;
+    text-decoration: none;
+    display: block;
+    width:100%;
+}
+
+ul {
+    margin: 0pt;
+    width: 48%;
+}
+
+.dropdown-content ul li:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color:#dfff80;
+        color:#444422;
+}
+.ArchItem {
+    width:100%;
+    margin-bottom: 1%;
+    height: 25pt;
+    margin-top: 10pt;
+}
+.number {
+    width: 5%;
+    display:inline-block;
+}
+.ArchHead {
+    width: 40%;
+    display:inline-block;
+}
+.ArchDate {
+    width: 18%;
+    display:inline-block;
+}
+.ArchCategory {
+    width: 12%;
+    display:inline-block;
+}
+.ArchAuthor {
+    width:10%;
+    display:inline-block;
+    
+}
+.buttons {
+    margin-bottom:3%;
+    background-color: #F6F72C;
+    width:100%;
+}
+.XmlSndBtnLink {
+    float:right;
+    display:inline-block;
+    margin-bottom:3%;
+    margin-right:2%;
+    background-color: #86b300; /* Green */
+    border: none;
+    color: white;
+    padding: 4pt 8pt;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8pt;
+    cursor:pointer;
+}
+    .XmlSndBtnLink:hover {
+        background-color:#dfff80;
+        color:#444422;
+    }
+.XmlSndBtnAjax {
+    float:right;
+    display:inline-block;
+    margin-bottom:3%;
+    background-color: #86b300; /* Green */
+    border: none;
+    color: white;
+    padding: 4pt 8pt;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8pt;
+    cursor:pointer;
+}
+.XmlSndBtnAjax:hover {
+        background-color:#dfff80;
+        color:#444422;
+    }
+.CsvSndBtnLink {
+    float:right;
+    display:inline-block;
+    margin-right:2%;
+    margin-bottom:3%;
+    background-color: #86b300; /* Green */
+    border: none;
+    color: white;
+    padding: 4pt 8pt;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8pt;
+    cursor:pointer;
+}
+.CsvSndBtnLink:hover {
+        background-color:#dfff80;
+        color:#444422;
+    }
+.CsvSndBtnAjax {
+    float:right;
+    display:inline-block;
+    margin-right:2%;
+    margin-bottom:3%;
+    background-color: #86b300; /* Green */
+    border: none;
+    color: white;
+    padding: 4pt 8pt;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8pt;
+    cursor:pointer;
+}
+.CsvSndBtnAjax:hover {
+        background-color:#dfff80;
+        color:#444422;
+    }

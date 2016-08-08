@@ -1,0 +1,40 @@
+﻿.space {
+    width:100%;
+}
+.middleContainer {
+    width:60%;
+    margin-left:20%;
+    margin-right:20%;
+    background-color: #f6f6ee;
+    text-align: center;
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
+
+.nameLine {
+    border-bottom: 4px solid #86b300;
+    height: 30px;
+    width: 86.5%;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+}
+.namePage {
+   border-bottom: 4px solid #86b300;
+   height: 30px;
+   width: 86.5%;
+   margin-left: 1.5%;
+   margin-right: 6.5%;
+}
+.line {
+
+}
+.title {
+    display:inline-block;
+    margin-left: 5pt;
+    font-size: 14pt;
+    margin-top: 2%;
+}
+    .title a {
+        text-decoration:none;
+        color:#33331a;
+    }

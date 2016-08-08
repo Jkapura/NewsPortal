@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <xs:element name="grid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="article">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:unsignedByte" />
+              <xs:element name="head" type="xs:string" />
+              <xs:element name="date" type="xs:dateTime" />
+              <xs:element name="categoryName" type="xs:string" />
+              <xs:element name="authorName" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

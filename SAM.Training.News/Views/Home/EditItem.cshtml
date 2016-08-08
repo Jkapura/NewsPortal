@@ -1,0 +1,88 @@
+﻿@model SAM.Training.News.Models.Article
+@{
+    ViewBag.Title = "EditItem";
+}
+
+<h2>EditItem</h2>
+@section Styles{
+                    
+        @Styles.Render("~/Styles/AddStyleSheet.css")
+        
+        @Scripts.Render("~/Scripts/formScript.js")
+                }
+@section inter{
+    <div class="allContent">
+        
+            <div class="interOffer">
+            <div id="headF">Offer your article!</div>
+                <div class ="allfields">
+
+                    @using(Html.BeginForm("Add", "Add", FormMethod.Post))
+                    {                    
+                            @Html.HiddenFor(m=>m.id)
+                            
+                            <div class ="name">@Html.LabelFor(m => m.categoryId,"Choose the category")</div>
+                            
+                        
+                        <div class="item">
+                            
+                            World
+                            @Html.RadioButtonFor(m=>m.categoryId, 1)
+                        </div>  
+                        
+                        <div class="item">
+                            Business
+                            @Html.RadioButtonFor(m=>m.categoryId,2)  
+                        
+                            </div>
+                        <div class="item">
+                            Tech
+                            @Html.RadioButtonFor(m=>m.categoryId, 3) 
+                        
+                        </div>
+                        <div class="item">
+                            Science
+                            @Html.RadioButtonFor(m=>m.categoryId, 4)  
+                        
+                        </div>
+                        <div class="item">
+                            Helth
+                            @Html.RadioButtonFor(m=>m.categoryId, 5)    
+                        
+                        </div>
+                        <div class="item">
+                            Sport
+                            @Html.RadioButtonFor(m=>m.categoryId, 6)
+                        
+                        </div>
+                        <div class="item">
+                            Music
+                            @Html.RadioButtonFor(m=>m.categoryId, 7)             
+                        </div>
+<br />
+                        @Html.LabelFor(m => m.head, "Enter the head of article")
+                        <br />
+                        @Html.EditorFor(m=>m.head)
+                        <br />
+                        @Html.LabelFor(m => m.content, "Enter the content of article")
+                        <br />
+                        @Html.EditorFor(m=>m.content)
+                        <br />
+                        @Html.LabelFor(m => m.hotNews, "Do you want to add article to HOT NEWS?")
+                        
+                        @Html.EditorForModel(@Model)
+                        <br />
+                        @Html.LabelFor(m=> m.isArchive, "Do you want to add article to archive?")
+                        
+                        @Html.CheckBoxFor(m=> m.isArchive)
+                        <br />
+                        <p><input type="submit" value="Send" /></p>
+                    }
+        
+                </div>
+            
+            <div class=""></div>
+        </div>
+    </div>
+    
+    }

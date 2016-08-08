@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    }
+
+<h2>Index</h2>
+@section Styles{
+    @Styles.Render("~/Styles/ArchiveStyleSheet.css")
+    @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+    @Scripts.Render("~/Scripts/jquery.fileDownload.js")
+    @Scripts.Render("~/Scripts/jsRender.js")
+    @Scripts.Render("~/Scripts/grid.js")
+    @Scripts.Render("~/Scripts/moment.js")
+    }
+@section inter{
+    <div class="space">
+        <div class="namePage"><div class="title">Archive</div></div>
+ <div class="spaceArch"> 
+     <div class="boxForDropDown" >
+         <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+              <div class="dropdown-content">
+               <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>5</li>
+                    <li>10</li>
+                </ul>
+              </div>
+            </div>         
+     <select id="dropdownpage">
+        <option value ="1">1</option>
+        <option value= "2">2</option>
+        <option value= "5">5</option>
+        <option value= "10">10</option>
+        <option value= "-1">All</option>
+    </select>
+         </div>
+     <div class="boxArch">
+    <div class ="headArch">
+                <div class="number">№</div>
+                <div class ="ArchCategory">Category</div>
+                <div class ="ArchHead">Head</div>
+                <div class ="ArchDate">Date</div>
+                <div class ="ArchAuthor">Author</div>
+            </div>
+           
+                
+    <script id="myTml" type="text/x-jsrender">
+                    <div class ="ArchItem" >
+                        <div class="number">{{:Id}}</div>
+                        <div class ="ArchCategory">{{:CategoryName}}</div>
+                        <div class ="ArchHead">{{:Head}}</div>
+                        
+                        <div class ="ArchDate">{{:~parseDate(Date)}}</div>
+                        
+                        <div class ="ArchAuthor">{{:AuthorName}}</div>
+                    </div>
+     </script>      
+         <div id="result"></div> 
+         <div class="buttons">
+             <p><input class="XmlSndBtnAjax" type="submit" value="XMLAjax" /></p>
+             <p><input class="XmlSndBtnLink" type="submit" value="XMLLink" /></p>
+             <p><input class="CsvSndBtnLink" type="submit" value="CSVLink" /></p>
+             <p><input class="CsvSndBtnAjax" type="submit" value="CSVAjax" /></p>
+         </div>
+    </div>
+    </div>
+        </div>
+    
+    }
+
+
