@@ -19,8 +19,8 @@
         @Styles.Render("~/Content/themes/base/jquery-ui.css")            
         @Styles.Render("~/Styles/IndexStyleSheet.css")
         
-        @Scripts.Render("~/Scripts/jquery-1.12.4.js")
-        @Scripts.Render("~/Scripts/jquery-ui-1.12.0.js")
+        
+        
         @Scripts.Render("~/Scripts/moment.min.js")
         @Scripts.Render("~/Scripts/jsRender.js")
         @Scripts.Render("~/Scripts/controllers.js")
@@ -43,7 +43,7 @@
             
               
             <script id="tmplForSingle" type="text/x-jsrender">
-                <div class="column1" itemid="@i.id">
+                <div class="column1" data-itemid="@i.id">
                     <div class="articleItem">
                     <div class="itemInter">
                     <div class="articlePict"></div>
@@ -72,7 +72,7 @@
                             <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
                         </div><br />
                          </script>
-                        <div class="listText">@Html.ActionLink("Read also","GetCategory","Home")</div>  
+                        <div class="listText"><a href="Home/GetCategory?category=@i.id">More news</a></div>  
                         <div class="listResult" data-itemid="@i.id"><div id="resultListItem"  itemid="@i.id"></div></div>
                         
                     </div>

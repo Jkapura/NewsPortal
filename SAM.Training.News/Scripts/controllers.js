@@ -140,11 +140,18 @@ function InitSingleColumn(categId, value, tmplForSngl, template) {
         },
         success: function (result) {
                 
-            $(selectiors.insertSnglPlaceById + categId + selectiors.closeBracket).html("");
+            //$(selectiors.insertSnglPlaceById + categId + selectiors.closeBracket).html("");
             var randValue = Math.floor(Math.random() * (result.resultLength + 1));
+            
             var randIndex = result.resultLength - randValue;
+            if (result.resultLength === randIndex)
+            {
+                randIndex = randIndex - 1;
+            }
+            //alert(result.result[randIndex].CategoryId + "||" + result.result[randIndex].Id)
             var htmlForSingle = tmplForSngl.render(result.result[randIndex]);
             //alert(result.result[0].CategoryId +" | "+ result.resultLength + " : " + randIndex);
+            
                 $(selectiors.insertSnglPlaceById + result.result[0].CategoryId + selectiors.closeBracket).html(htmlForSingle);
             
         }

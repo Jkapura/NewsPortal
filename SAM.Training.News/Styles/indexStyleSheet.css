@@ -14,7 +14,12 @@
     padding-right:5px;
 }
 
-
+#home {
+    font-family:'Estrangelo Edessa';
+    background-color:#86b300;
+    padding:3px;
+    color: white;
+}
 .headArtItem {
     font-size: 15pt;
     padding: 6px;

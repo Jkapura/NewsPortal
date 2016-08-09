@@ -7,7 +7,7 @@
 <h2>IndexEdit</h2>
 @section Styles{
                     
-        @Styles.Render("~/Styles/AddStyleSheet.css")
+        @Styles.Render("~/Styles/EditStyleSheet.css")
         @Scripts.Render("~/Scripts/jquery.validate.js")        
         @Scripts.Render("~/Scripts/formScript.js")
         
@@ -78,7 +78,7 @@
                         
                         @Html.CheckBoxFor(m=> m.isArchive,new { @class = "isArchive" })
                         <br />
-                        <p><input class="sndBtn" type="submit" value="Send" /></p>
+                        <p><input class="button" type="submit" value="Send" /></p>
                     }
         
                 </div>

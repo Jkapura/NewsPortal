@@ -248,10 +248,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\jscroller-0.1.6.js" />
+    <Content Include="Scripts\jscroller-0.1.6.min.js" />
     <Content Include="Scripts\uploadJs.js" />
     <Content Include="Scripts\_layoutJS.js" />
     <Content Include="Styles\1468528058_Icon_Element_Fire_03.png" />
     <Content Include="Styles\CategoryStyleSheet.css" />
+    <Content Include="Styles\EditStyleSheet.css" />
     <Content Include="Styles\UploadStyleSheet.css" />
     <Content Include="XML\data.xml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />

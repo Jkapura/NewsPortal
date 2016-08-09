@@ -23,13 +23,13 @@
             <div id="headF">Offer your article!</div>
                 <div class ="allfields">
 
-                    @using(Html.BeginForm("Add", "Add", FormMethod.Post, new{@id="formSet"}))
+                    @using(Html.BeginForm("Add", "Add", FormMethod.Post, new{ @id="formSet"}))
                     {                    
                             @Html.HiddenFor(m=>m.id)
                         
-                            @Html.LabelFor(m => m.categoryId,"Choose the category",new { @class="categoryLabel"})
-                            
-                        
+                            @Html.LabelFor(m => m.categoryId, "Choose the category", new { @class="categMessage"})
+                            <br />
+                        <div id="categoryId">
                         <div class="item">
                             World
                             @Html.RadioButtonFor(m=>m.categoryId, 1)
@@ -63,24 +63,25 @@
                         <div class="item">
                             Music
                             @Html.RadioButtonFor(m=>m.categoryId, 7)             
-                        </div>
+                        </div></div>
 <br />
+                            
                         @Html.LabelFor(m => m.head, "Enter the head of article")
-                        <br />
+                        <br /><br />
                         @Html.TextBoxFor(m=>m.head, new {@class="head"})
-                        <br />
+                        <br /><br />
                         @Html.LabelFor(m => m.content, "Enter the content of article")
-                        <br />
+                        <br /><br />
                         @Html.TextAreaFor(m=>m.content,new {@class="content"})
-                        <br />
+                        <br /><br />
                         @Html.LabelFor(m => m.hotNews, "Do you want to add article to HOT NEWS?")
                         
                         @Html.CheckBoxFor(m=> m.hotNews,new {@class="hotNews"})
-                        <br />
+                        <br /><br />
                         @Html.LabelFor(m=> m.isArchive, "Do you want to add article to archive?")
                         
                         @Html.CheckBoxFor(m=> m.isArchive,new {@class="isArchive"})
-                        <br />
+                        <br /><br />
                         <p><input class="button" type="submit" value="Save" /></p>
                         
                     }

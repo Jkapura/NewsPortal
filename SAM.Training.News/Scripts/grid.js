@@ -38,7 +38,20 @@
     
     
     $("#dropdownpage").change(function () {
+        var qual = $("#dropdownpage").val();
+        // qual = $(".dropdown-content-CountItems ul li").text();
+        $.ajax({
+            url: 'CallData',
+            data: { num: qual },
+            type: "post",
+            dataType: "json",
+            error: function (json) { alert("Error"); },
+            success: function (json) {
 
+                var htmlOutput = template.render(json);
+                $("#result").html(htmlOutput);
+            }
+        });
     });
     window.onunload = function () {
         var colrows = $("#dropdownpage").val();

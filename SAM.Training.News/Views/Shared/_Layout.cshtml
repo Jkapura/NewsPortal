@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    @Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="@Url.Content("~/Scripts/jquery-1.12.4.min.js")" type="text/javascript"></script>
+    @*@Scripts.Render("~/Scripts/jquery-ui-1.12.0.js")*@
+   <script src="@Url.Content("~/Scripts/jscroller-0.1.6.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_layoutJS.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/indexScript.js")" type="text/javascript"></script>
+    
    
 </head>
 <body>
@@ -16,7 +21,9 @@
         <div class="menu">
             
             <div class="contacts">
+                
                 <div class="addedPower">
+                    <div class="dateTime">@DateTime.Now.ToString().Substring(0,10)</div>
                     <div class="offerNews" data-title="Create new Article!">@*<a href="~/Add/Index">*@<img src="~/Content/1468505800_add_red.png" width="36" height="36" />@*</a>*@
                       
                     </div>
@@ -63,12 +70,12 @@
 				</div>
                 <div class="runLine">
                     <div class="runLineContent">
-                        <div class="breakingNews">
+                        <div id="breakingNews">
                             <div class="breakRed">BREAKING NEWS</div>
-                            <div class="line">
-                                <marquee id="line" behavior="scroll" direction="right" >
+                            <div id="line">
+                               
                                    
-                              </marquee>
+                             
                             </div>
                         </div>
                     </div>

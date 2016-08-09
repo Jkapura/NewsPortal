@@ -52,8 +52,8 @@ background-color: #b8b894;
 .dropdown-content-Options a {
     color: black;
     text-decoration: none;
-   
     display: block;
+    text-align: center;
 }
 
 .dropdown-content-Options a:hover {background-color: #f1f1f1}

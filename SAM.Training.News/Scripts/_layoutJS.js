@@ -6,15 +6,14 @@
         url: "Home/GetHotJson",
         data: {  },
         dataType: "json",
-        error: function (result) {
-          
+        error: function (result) {          
         },
         success: function (result) {
-            for (var i = 0; i < 10; i++) {            
-                $(".line").html("");
-                $("#line").html('<marquee id="line" behavior="scroll" direction="right" >'+"<result[1].Head"+'</marquee>');
-            }
+            $("#line").text(result[0].Head);
+            $jScroller.add("#breakingNews", "#line", "left", 10, true);
+            $jScroller.start();
         }
 
     });
+    
 });

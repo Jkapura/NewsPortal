@@ -32,6 +32,37 @@
         <div id="editDialog" ><p>Are you sure that you want to edit this article?</p></div> 
         <div id="toArchiveDialog" ><p>Are you sure that you want to add this article to archive?</p></div> *@
         <div class="columns">
+            <div class="filterBox">
+                <div class="labelFilter">
+                <div class="datapickerContainer">
+                    <label for="from" class="datapickerItem">From</label>
+                <input type="text" id="from" class="datapickerItem" name="from">
+                <label for="to" class="datapickerItem">to</label>
+                <input type="text" id="to" class="datapickerItem" name="to">                    
+                </div>
+                    <div class="checkBoxContainer">
+                       <fieldset>
+                            <legend>Category: </legend>                            
+                            <label for="checkbox-1" class="checkbox">World</label>
+                            <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                            <label for="checkbox-2">Business</label>
+                            <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                            <label for="checkbox-3">Tech</label>
+                            <input type="checkbox" name="checkbox-3" id="checkbox-3">
+                            <label for="checkbox-4">Science</label>
+                            <input type="checkbox" name="checkbox-4" id="checkbox-4">
+                            <label for="checkbox-5">Helth</label>
+                            <input type="checkbox" name="checkbox-5" id="checkbox-5">
+                            <label for="checkbox-6">Sport</label>
+                            <input type="checkbox" name="checkbox-6" id="checkbox-6">
+                            <label for="checkbox-7">Music</label>
+                            <input type="checkbox" name="checkbox-7" id="checkbox-7">
+                          </fieldset>
+                    </div>
+                    <input class="sendDate" type="submit" value="Sort" />
+                                   </div>
+                </div>
+           
             <div class="middleContent">
             <div class="hotItems">  
                 <div class="hotItemsHead">
@@ -46,7 +77,7 @@
                     <div class="itemInter">
                     <div class="articlePict"></div>
                     <div class="headArtItem">
-                        <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
+                        <a href ="ArticleView/{{:Id}}">{{:Head}}</a>
                     </div>          
                     <div class="moreInform">
                         <div class="date">{{:~parseDate(Date)}}</div>
@@ -79,10 +110,11 @@
         
         </div>
     
-        
-    }
-</div>
+        </div>
+                
  </div>   
+    }
+
 }    
 </body>
 </html>

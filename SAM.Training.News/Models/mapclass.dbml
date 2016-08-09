@@ -76,4 +76,10 @@
   <Function Name="dbo.GetWeekStatistic" Method="GetWeekStatistic">
     <ElementType IdRef="ID1" />
   </Function>
+  <Function Name="dbo.GetFromToDateNews" Method="GetFromToDateNews">
+    <Parameter Name="categoryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="from" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="to" Type="System.DateTime" DbType="DateTime" />
+    <ElementType IdRef="ID2" />
+  </Function>
 </Database>

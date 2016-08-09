@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using SAM.Training.News.Models;
 using SAM.Training.News.Models.DtoObjects;
+using System.Text;
+using System.Globalization;
 
 namespace SAM.Training.News.Controllers
 {
@@ -103,7 +105,16 @@ namespace SAM.Training.News.Controllers
             int _resultLength = _result.Count;
             return Json(new { result = _result, resultLength =_resultLength}, JsonRequestBehavior.AllowGet);
         }
-       
+       //Return sorted by Date items
+        //Pattern '2016-07-20'
+        public JsonResult GetByDateNews(int categoryId, DateTime from, DateTime to)
+        {
+            var correctFrom = Convert.ToDateTime(from.ToString("u"));
+            var correctTo = Convert.ToDateTime(to.ToString("u"));
+            List<ArticleDto> _result =MapToDto(db.GetFromToDateNews(categoryId, correctFrom,correctTo));
+            int _resultLength = _result.Count;
+            return Json(new { result = _result, resultLength = _resultLength }, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult ToStatistic()
         {
             var stTotalData = db.GetTotalStatistic().ToArray().FirstOrDefault();
@@ -201,6 +212,7 @@ namespace SAM.Training.News.Controllers
             }
             return dtoObj;
         }
+        
         #endregion
     }
 }

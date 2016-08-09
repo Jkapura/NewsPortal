@@ -6,7 +6,8 @@
             },
             head: {
                 required: true,
-                minlength: 4
+                minlength: 4,
+                maxlength:50
             },
             content: {
                 required: true,
@@ -16,7 +17,7 @@
         },
         messages: {
             categoryId: {
-                required: "*",
+                required: "Choose one of the categories.",
             },
             head: {
                 required: "Please enter head of article.",
@@ -28,13 +29,27 @@
             }
 
         },
+        highlight: function(element) {
+            $(element).addClass('errorInput');
+        }, unhighlight: function(element) {
+            $(element).removeClass('errorInput');
+        },
         errorElement: "div",
         wrapper: "div",  
         errorPlacement: function (error, element) {
+
             offset = element.offset();
-            error.insertBefore(element)
+            if (element.attr("type") == "radio") {
+                error.insertAfter($("#categoryId"));
+            } else {
+                error.insertAfter(element)
+            }
             error.addClass('message');  
-            error.css('position', 'relative');
+            error.css({
+                'position': 'relative',
+               
+
+            });
             //error.css('left', offset.left + element.outerWidth());
             //error.css('top', offset.top + element.outerHeight());
         }
