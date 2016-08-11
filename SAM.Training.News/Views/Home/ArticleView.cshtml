@@ -18,6 +18,7 @@
     <div id="editDialog">Are you sure that you want edit this article</div>
     <div id="toArchiveDialog">Are you sure that you want add to Archive this article</div> 
         <div class="space">
+           @* <div class="previous"><</div>*@
             <div class="options">
                 <div class="dropdownOptions">
                   <button class="dropbtnOptions"><img src="~/Content/options.png" /></button>
@@ -37,15 +38,20 @@
             <div class="navPath"><div class="pathItem"></div></div>
             <div id="hdnId">@ViewBag.article.id</div>
             <div class="itemIcon"></div>
+            <div class="info"><div class="nameInfo">Folder: </div><div id="isArchive">@ViewBag.hotNews</div> 
+                
+            </div>
             <div id = "articleHead">@ViewBag.article.head</div>
             <div id = "articleAuthor">
             
                     @ViewBag.author
             
             </div>
+                
             <div id = "articleContent">@ViewBag.article.content
                 <div id = "articleDate">@ViewBag.article.date</div>
             </div>
             </div>
+            @*<div class="next">></div>*@
             </div>
     }

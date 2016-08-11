@@ -120,3 +120,35 @@ word-break: break-all;
     height: 150pt;
     margin-bottom: 5%;
 }
+.previous {
+   min-width:60pt;
+   width:5%;
+   height:100%;
+   background-color:#b8b894;
+   opacity: 0.3;
+}
+.next {
+    min-width:60pt;
+   width:5%;
+   height:100%;
+   background-color:#b8b894;
+    opacity: 0.3;
+}
+#isArchive {
+    width:40pt;
+    height:20pt;
+    display:inline-block;
+    float:left;
+}
+.info {
+    height: 40pt;
+    width:80%;
+    font-family: 'Estrangelo Edessa';
+}
+.nameInfo {
+    height:40pt;
+    width: 12%;
+    display:inline-block;
+    float:left;
+    margin-left: 7.3%;
+}

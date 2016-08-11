@@ -2,7 +2,7 @@
     $(".edit").click(function () {
         $("#editDialog").dialog("open");
     });
-    $(".toArchive").click(function () {
+    $(".toArc").click(function () {
         $("#toArchiveDialog").dialog("open");
     });
     $(".delete").click(function () {

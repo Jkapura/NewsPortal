@@ -7,6 +7,10 @@ using SAM.Training.News.Models;
 using SAM.Training.News.Models.DtoObjects;
 using System.Text;
 using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace SAM.Training.News.Controllers
 {
@@ -98,22 +102,25 @@ namespace SAM.Training.News.Controllers
         }
         //Hendler for ajax
         public JsonResult GetByCategoryNews(int categoryId, int count)
-        {
+        {         
             
-            //var count2 = new Random().Next(0, 7);
             List<ArticleDto> _result = MapToDto(db.GetByCategory(categoryId).ToArray().Take(count));
             int _resultLength = _result.Count;
             return Json(new { result = _result, resultLength =_resultLength}, JsonRequestBehavior.AllowGet);
         }
-       //Return sorted by Date items
+        //Return sorted by Date items
         //Pattern '2016-07-20'
-        public JsonResult GetByDateNews(int categoryId, DateTime from, DateTime to)
+        public JsonResult GetByDateNews(string categoryId, DateTime from, DateTime to)
         {
+            var correctCategories = ParseCategoryString(categoryId);
             var correctFrom = Convert.ToDateTime(from.ToString("u"));
             var correctTo = Convert.ToDateTime(to.ToString("u"));
-            List<ArticleDto> _result =MapToDto(db.GetFromToDateNews(categoryId, correctFrom,correctTo));
+            var items = MapToDto(db.Articles.Where(x => correctCategories.Contains(x.categoryId) && x.date >= from && x.date<=to).Select(x => x));
+            var _result = MapToDto(db.GetFromToDateNews(correctFrom, correctTo));
+            
             int _resultLength = _result.Count;
-            return Json(new { result = _result, resultLength = _resultLength }, JsonRequestBehavior.AllowGet);
+            return Json(new { result = _result}, JsonRequestBehavior.AllowGet);
+            
         }
         public ActionResult ToStatistic()
         {
@@ -159,7 +166,7 @@ namespace SAM.Training.News.Controllers
             Article modif = Articles.First(i => i.id.Equals(data.id));
             modif.hotNews = data.hotNews;
             db.SubmitChanges();
-            return Json("true");
+            return new JsonResult();
         }
 
         public JsonResult ToArchive(Article data)
@@ -167,8 +174,9 @@ namespace SAM.Training.News.Controllers
             Article modif = Articles.First(i => i.id.Equals(data.id));
             modif.isArchive = data.isArchive;
             db.SubmitChanges();
-            return Json("true");
+            return new JsonResult();
         }
+
         #endregion
 
         #region ConvertToDtoObject
@@ -200,19 +208,47 @@ namespace SAM.Training.News.Controllers
             List<ArticleDto> dtoObj = new List<ArticleDto>();
             foreach (var i in items)
             {
-                dtoObj.Add(new ArticleDto
+                if (i.content == null)
                 {
-                    Id = i.id,
-                    CategoryId = i.categoryId,
-                    Head = i.head,
-                    
-                    Date = (DateTime)i.date,
+                    dtoObj.Add(new ArticleDto
+                    {
+                        Id = i.id,
+                        CategoryId = i.categoryId,
+                        Head = i.head,
+                        Date = (DateTime)i.date,
 
-                });
+                    });
+                }
+                else{
+                dtoObj.Add(new ArticleDto
+                    {
+                        Id = i.id,
+                        CategoryId = i.categoryId,
+                        Head = i.head,
+                        Date = (DateTime)i.date,
+                        Content= i.content
+                    });
+                }
+            
             }
             return dtoObj;
         }
-        
+        private List<int> ParseCategoryString(string line)
+        {
+            var regex = new Regex("[0-9]+");
+            var strCategoriesIds = "";
+            var correctCategories = new List<int>();
+            var regexCategories = regex.Matches(line);
+            foreach (Match match in regexCategories)
+            {                
+                correctCategories.Add(Int32.Parse(match.Value));
+                
+            }
+             
+             strCategoriesIds = string.Join(",", correctCategories);
+
+             return correctCategories;
+        }
         #endregion
     }
 }

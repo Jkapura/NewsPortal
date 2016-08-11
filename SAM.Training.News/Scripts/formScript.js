@@ -1,5 +1,4 @@
-﻿$(function () {
-    
+﻿$(function () {    
     var urlPass = window.location.toString();
     var id = parseInt(urlPass.substr(41, 3));
     $.ajax({
@@ -17,70 +16,67 @@
             $("[name='categoryId']").val(json.CategoryId).prop('checked', true);
 
         }
-    })
-    $(function () {
-        $('#formSet').validate({
-            rules: {
-                categoryId: {
-                    required: true,
-                },
-                head: {
-                    required: true,
-                    minlength: 4,
-                    maxlength:50
-                },
-                content: {
-                    required: true,
-                    minlength: 4
-                },
-
+    });
+    $('#formSet').validate({
+        rules: {
+            categoryId: {
+                required: true,
             },
-            messages: {
-                categoryId: {
-                    required: "Choose one of the categories.",
-                },
-                head: {
-                    required: "Please enter head of article.",
-                    minlength: "Head should have at least 4 signs",
-                },
-                content: {
-                    required: "Please enter content of article.",
-                    minlength: "Content should have at least 4 signs",
-                }
-
+            head: {
+                required: true,
+                minlength: 4,
+                maxlength: 50
             },
-            highlight: function(element) {
-                $(element).addClass('errorInput');
-            }, unhighlight: function(element) {
-                $(element).removeClass('errorInput');
+            content: {
+                required: true,
+                minlength: 4
             },
-            errorElement: "div",
-            wrapper: "div",  
-            errorPlacement: function (error, element) {
 
-                offset = element.offset();
-                if (element.attr("type") == "radio") {
-                    error.insertAfter($("#categoryId"));
-                } else {
-                    error.insertAfter(element)
-                }
-                error.addClass('message');  
-                error.css({
-                    'position': 'relative',
-               
-
-                });
-                //error.css('left', offset.left + element.outerWidth());
-                //error.css('top', offset.top + element.outerHeight());
+        },
+        messages: {
+            categoryId: {
+                required: "Choose one of the categories.",
+            },
+            head: {
+                required: "Please enter head of article.",
+                minlength: "Head should have at least 4 signs",
+            },
+            content: {
+                required: "Please enter content of article.",
+                minlength: "Content should have at least 4 signs",
             }
 
-        });
+        },
+        highlight: function (element) {
+            $(element).addClass('errorInput');
+        }, unhighlight: function (element) {
+            $(element).removeClass('errorInput');
+        },
+        errorElement: "div",
+        wrapper: "div",
+        errorPlacement: function (error, element) {
 
+            offset = element.offset();
+            if (element.attr("type") == "radio") {
+                error.insertAfter($("#categoryId"));
+            } else {
+                error.insertAfter(element)
+            }
+            error.addClass('message');
+            error.css({
+                'position': 'relative',
+
+
+            });
+            //error.css('left', offset.left + element.outerWidth());
+            //error.css('top', offset.top + element.outerHeight());
+        }
+
+    });
     $("#formSet").keydown(function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
             return false;
         }
     });
-    
-});
+    });    

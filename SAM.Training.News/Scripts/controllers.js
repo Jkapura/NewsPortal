@@ -10,6 +10,7 @@
 
 var locations =
     {
+
         getByCategory : "Home/GetByCategoryNews"
     }
 var startData = (function () {
@@ -42,20 +43,41 @@ var modifyData = (function () {
             });
         },
         ToArchive: function (selectedObjId) {
-            $.ajax({
-                url:'/Home/ToArchive',
-                data: { id: selectedObjId, isArchive: true },
-                type: "post",
-                dataType: "json",
-                error: function (json) {
-                    location.href = location.href;
-                },
-                success: function (json) {
-                   
-                }
-            });
+            var flag = $("#isArchive").text();
+            if (flag === "Hot") {
+                $.ajax({
+                    url: '/Home/ToArchive',
+                    data: { id: selectedObjId, isArchive: true },
+                    type: "post",
+                    dataType: "json",
+                    error: function (json) {
+                        location.href = location.href;
+                    },
+                    success: function (json) {
+                        $("#toArchiveDialog").dialog("close");
+                        $("#isArchive").text("");
+                        $("#isArchive").text("Archive");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    url: '/Home/ToArchive',
+                    data: { id: selectedObjId, isArchive: false },
+                    type: "post",
+                    dataType: "json",
+                    error: function (json) {
+                        location.href = location.href;
+                    },
+                    success: function (json) {
+                        $("#toArchiveDialog").dialog("close");
+                        $("#isArchive").text("");
+                        $("#isArchive").text("Hot");
+                    }
+                });
+            }
             
-            location.href = location.href;
+           
         },
         Delete: function (selectedObjId) {
             $.ajax({
@@ -64,14 +86,17 @@ var modifyData = (function () {
                 data: { id: selectedObjId },
                 type: "post",
                 dataType: "json",
-                error: function (json) { location.href = location.href; },
-                success: function (json) {
+                error: function (json) {
                     
-                    location.href = location.href;
+                },
+                success: function (json) {
+                    var hosturl = location.host;
+                    location.href = "/Home/GetHotNews";
+                    startData.InitAllNews();
                     
                 }
             });
-            location.href = location.href;
+           
         },
         Edit: function (selectedObjId) {
             $.ajax({

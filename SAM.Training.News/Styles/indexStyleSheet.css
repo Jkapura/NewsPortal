@@ -13,7 +13,12 @@
     padding-left: 5px;
     padding-right:5px;
 }
-
+.result {
+    padding-top: 18pt;
+}
+#result {
+    padding-top:10pt;
+}
 #home {
     font-family:'Estrangelo Edessa';
     background-color:#86b300;
@@ -24,7 +29,8 @@
     font-size: 15pt;
     padding: 6px;
     font-family:'Estrangelo Edessa';
-    height: 30pt;
+    height: 35pt;
+    width:80%;
 }
     .headArtItem a {
         color:#212112;
@@ -57,6 +63,9 @@
     font-family:Aparajita;
     height: 150pt;
     width: 100%;
+    overflow:hidden;
+    word-wrap::break-word;
+    word-break:break-all
 }
 .columns {
     background-color:#f6f6ee;
@@ -85,7 +94,7 @@ margin-top: 8%;
 }
 .articlePict {
     background-color:gray;
-    width: 89%;
+    width: 78%;
     height: 124pt;
 }
 .headName {
@@ -142,8 +151,18 @@ margin-top: 8%;
         }
 .listText {
     font-family:'Estrangelo Edessa';
-    font-size:16pt;
+    font-size: 20pt;
     padding:8pt;
+    text-align: center;
+}
+
+.listText a {
+    text-decoration: none;
+    color: #444422;
+}
+
+.listText a:hover {
+    color: #86b300;
 }
 .button {
     background-color: #86b300;

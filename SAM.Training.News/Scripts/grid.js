@@ -3,7 +3,8 @@
     var template = $.templates("#myTml");
     var cookData = getCookie("numberOfRows");
     $("#dropdownpage").val(cookData).prop('checked', true);
-    if (cookData != "") {
+    if (cookData != "")
+    {
         
         $.ajax({
             url: 'CallData',
@@ -18,7 +19,8 @@
             }
         });
     }
-    else {
+    else
+    {
         var qual = $("#dropdownpage").val();
         $.ajax({
             url: 'CallData',

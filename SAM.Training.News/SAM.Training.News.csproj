@@ -170,6 +170,7 @@
     <Content Include="Content\1470669686_delete.png" />
     <Content Include="Content\1470669696_folder.png" />
     <Content Include="Content\1470669717_note.png" />
+    <Content Include="Content\BigLogo.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -252,7 +253,6 @@
     <Content Include="Scripts\jscroller-0.1.6.min.js" />
     <Content Include="Scripts\uploadJs.js" />
     <Content Include="Scripts\_layoutJS.js" />
-    <Content Include="Styles\1468528058_Icon_Element_Fire_03.png" />
     <Content Include="Styles\CategoryStyleSheet.css" />
     <Content Include="Styles\EditStyleSheet.css" />
     <Content Include="Styles\UploadStyleSheet.css" />
