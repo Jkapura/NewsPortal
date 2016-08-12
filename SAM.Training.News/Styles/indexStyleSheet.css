@@ -59,13 +59,15 @@
     padding-left: 16px;
 }
 .contArtItem {
-    font-size:16pt;
-    font-family:Aparajita;
+    font-size:11pt;
+    font-family:'Estrangelo Edessa';
     height: 150pt;
-    width: 100%;
+    width: 80%;
     overflow:hidden;
-    word-wrap::break-word;
-    word-break:break-all
+    word-wrap:break-word;
+    word-break:break-all;
+    margin-top:15pt;
+    color:#666633;
 }
 .columns {
     background-color:#f6f6ee;
@@ -104,6 +106,7 @@ margin-top: 8%;
     width: 65pt;
     border-bottom: 4px solid  #33331a;
     display: inline-block;
+    text-align: center;
 }
 .moreNews {
     background-color:#86b300;

@@ -20,6 +20,7 @@
         
         @Scripts.Render("~/Scripts/jquery-1.12.4.js")
         @Scripts.Render("~/Scripts/jquery-ui-1.12.0.js")
+        @Scripts.Render("~/Scripts/jquery.validate.min.js")
         @Scripts.Render("~/Scripts/moment.min.js")
         @Scripts.Render("~/Scripts/jsRender.js")        
         @Scripts.Render("~/Scripts/categoryScript.js")
@@ -44,22 +45,22 @@
                         </fieldset>                 
                 </div>
                     <div class="checkBoxContainer">
-                       <fieldset >
+                       <fieldset class="checkbox">
                             <legend>Category: </legend>                            
                             <label for="checkbox-1" >World</label>
-                            <input type="checkbox" name="checkbox-1" id="checkbox-1" data-checkbox="1">
+                            <input type="checkbox" name="checkbox-1" id="checkbox-1" data-checkbox="1" class="checkbox">
                             <label for="checkbox-2">Business</label>
-                            <input type="checkbox" name="checkbox-2" id="checkbox-2" data-checkbox="2">
+                            <input type="checkbox" name="checkbox-2" id="checkbox-2" data-checkbox="2" class="checkbox">
                             <label for="checkbox-3">Tech</label>
-                            <input type="checkbox" name="checkbox-3" id="checkbox-3" data-checkbox="3">
+                            <input type="checkbox" name="checkbox-3" id="checkbox-3" data-checkbox="3" class="checkbox">
                             <label for="checkbox-4">Science</label>
-                            <input type="checkbox" name="checkbox-4" id="checkbox-4" data-checkbox="4">
+                            <input type="checkbox" name="checkbox-4" id="checkbox-4" data-checkbox="4" class="checkbox" >
                             <label for="checkbox-5">Helth</label>
-                            <input type="checkbox" name="checkbox-5" id="checkbox-5" data-checkbox="5">
+                            <input type="checkbox" name="checkbox-5" id="checkbox-5" data-checkbox="5" class="checkbox" >
                             <label for="checkbox-6">Sport</label>
-                            <input type="checkbox" name="checkbox-6" id="checkbox-6" data-checkbox="6">
+                            <input type="checkbox" name="checkbox-6" id="checkbox-6" data-checkbox="6" class="checkbox">
                             <label for="checkbox-7">Music</label>
-                            <input type="checkbox" name="checkbox-7" id="checkbox-7" data-checkbox="7">
+                            <input type="checkbox" name="checkbox-7" id="checkbox-7" data-checkbox="7" class="checkbox">
                           </fieldset>
                     </div>
                     <input class="sendDate" type="submit" value="Sort" />
@@ -67,13 +68,15 @@
                 </div>
            
             <div class="middleContent">
+                
             <div class="hotItems">  
                 <div class="hotItemsHead">
                     <div class="headName">@ViewBag.category.name</div>
-                   
+                   <div class="filterBox-gorizontal">
+                
                 </div>      
             
-              
+             <div class="itemsEmptyResult"></div> 
             <script id="tmplForSingle" type="text/x-jsrender">
                 <div class="column1" itemid="">
                     <div class="articleItem">
@@ -89,26 +92,15 @@
                     </div>
                     <div class="contArtItem">{{:Content}}</div>                       
                     </div>
-                       
+                     <a href="ArticleView/{{:Id}}" class="button">Read more</a>  
                 </div>
             </div>  
             </script> 
-                <div  ><div id="resultForSngl" itemid="@ViewBag.category.id"></div></div>    
-            @*<div class="column2"itemid="">
-                <div class="listContainer">
-                    <div class="list">
-                        <script id="myTml" type="text/x-jsrender">
-                        <div class="listItem">
-                                                      
-                            <a href ="Home/ArticleView/{{:Id}}">{{:Head}}</a>
-                        </div><br />
-                         </script>
-                        
-                        <div class="listResult" data-itemid=""><div id="resultListItem"  itemid="@ViewBag.category.id"></div></div>
-                        
-                    </div>
-                </div>
-            </div>*@
+                <div >
+                    <div id="resultForSngl" itemid="@ViewBag.category.id"></div>
+                    
+                </div>    
+            
            
         
         </div>

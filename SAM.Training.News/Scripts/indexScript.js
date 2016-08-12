@@ -51,14 +51,5 @@ function cssStay() {
         "color": "white"
     });
 }
-//function windowSize() {
-//    if ($(window).width() <= '1600') {
 
-//        $('.aLight').hide();
-//    }
-//    else {
-//        $(".aLight").show();
-//    }
-//}
-//$(window).on('load resize', windowSize);
 

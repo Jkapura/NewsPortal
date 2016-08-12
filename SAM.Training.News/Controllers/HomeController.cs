@@ -89,8 +89,9 @@ namespace SAM.Training.News.Controllers
         [HttpGet]
         public JsonResult GetHotJson()
         {
-            var articles = MapToDto(db.GetHotNews().ToArray().Take(10));
-            return Json(articles, JsonRequestBehavior.AllowGet);
+            var _result = MapToDto(db.GetHotNews().ToArray().Take(10));
+            var _resultLength = _result.Count;
+            return Json(new { result =_result,resultLength=_resultLength}, JsonRequestBehavior.AllowGet);
         }
         //Return Hot
         public ActionResult GetHotNews()
@@ -110,17 +111,36 @@ namespace SAM.Training.News.Controllers
         }
         //Return sorted by Date items
         //Pattern '2016-07-20'
-        public JsonResult GetByDateNews(string categoryId, DateTime from, DateTime to)
+        public JsonResult GetByDateCategoriesNews(string categoryId, DateTime? from, DateTime? to)
         {
+            List<ArticleDto> _result = new List<ArticleDto>();
             var correctCategories = ParseCategoryString(categoryId);
-            var correctFrom = Convert.ToDateTime(from.ToString("u"));
-            var correctTo = Convert.ToDateTime(to.ToString("u"));
-            var items = MapToDto(db.Articles.Where(x => correctCategories.Contains(x.categoryId) && x.date >= from && x.date<=to).Select(x => x));
-            var _result = MapToDto(db.GetFromToDateNews(correctFrom, correctTo));
-            
+            if (from != null && to != null)
+            {               
+               _result= GetDCPack (correctCategories, (DateTime)from, (DateTime)to);
+            }
+            else {
+                
+                if (from != null)
+                {
+                    _result = MapToDto(db.Articles.Where(x => correctCategories.Contains(x.categoryId) && x.date >= from).Select(x => x));
+                }
+                   
+                else {
+                    
+                    _result = MapToDto(db.Articles.Where(x => correctCategories.Contains(x.categoryId) && x.date <= to).Select(x => x));
+                }
+            }
             int _resultLength = _result.Count;
-            return Json(new { result = _result}, JsonRequestBehavior.AllowGet);
-            
+            return Json(new { result = _result, resultLength=_resultLength}, JsonRequestBehavior.AllowGet);            
+        }
+        
+        public JsonResult GetByCategoriesNews(string categoryId)
+        {            
+            var correctCategories = ParseCategoryString(categoryId);
+            List<ArticleDto> _result = MapToDto(db.Articles.Where(x => correctCategories.Contains(x.categoryId)).Select(x => x));            
+            int _resultLength = _result.Count;
+            return Json(new { result = _result, resultLength = _resultLength }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult ToStatistic()
         {
@@ -248,6 +268,13 @@ namespace SAM.Training.News.Controllers
              strCategoriesIds = string.Join(",", correctCategories);
 
              return correctCategories;
+        }
+        private List<ArticleDto> GetDCPack(List<int> correctCategories, DateTime from, DateTime to)
+        {
+            List<ArticleDto> _result = new List<ArticleDto>();
+            var correctFrom = Convert.ToDateTime(from.ToString("u"));
+            var correctTo = Convert.ToDateTime(to.ToString("u"));
+            return _result = MapToDto(db.Articles.Where(x => correctCategories.Contains(x.categoryId) && x.date >= from && x.date <= to).Select(x => x));
         }
         #endregion
     }

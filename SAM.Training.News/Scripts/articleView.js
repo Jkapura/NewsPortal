@@ -1,4 +1,5 @@
-﻿$(function () {    
+﻿
+$(function () {
     $(".edit").click(function () {
         $("#editDialog").dialog("open");
     });
@@ -32,4 +33,5 @@
             "Cancel": function () { $(this).dialog("close"); }
         }
     });
+    
 });

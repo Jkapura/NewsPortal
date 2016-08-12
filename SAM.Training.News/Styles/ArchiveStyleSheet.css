@@ -37,6 +37,22 @@
     background-color: #f6f6ee;
 }
 
+.delete {
+    display: inline-block;
+}
+
+.toArc {
+    display: inline-block;
+}
+
+.options {
+    display: inline-block;
+}
+
+.edit {
+    display: inline-block;
+}
+
 .headArch {
     font-size: 16pt;
     height: 25pt;
@@ -100,7 +116,7 @@ ul {
 .ArchItem {
     width:100%;
     margin-bottom: 1%;
-    height: 25pt;
+    height: 30pt;
     margin-top: 10pt;
 }
 .number {

@@ -5,10 +5,11 @@
     font-size: 11pt;
     font-family: 'Estrangelo Edessa';
     height: 150pt;
-    width: 90%;
+    width: 87%;
     color: #777749;
     margin-left: 3%;
     word-wrap: break-word;
+    overflow: hidden;
 }
 .columns {
     height:100%;
@@ -17,6 +18,7 @@
 }
 
 .filterBox {
+    min-width:200pt;
     height: 335pt;
     width: 18%;
     margin-left: 2%;
@@ -64,6 +66,7 @@ margin-top: 8%;
     width: 65pt;
     border-bottom: 4px solid  #33331a;
     display: inline-block;
+    text-align: center;
 }
 .moreNews {
     background-color:#86b300;
@@ -215,4 +218,20 @@ margin-left: 10pt;
     float:left;
     max-width: 60pt;
     font-family: 'Estrangelo Edessa';
+}
+.itemsEmptyResult p{
+    text-align:center;
+    margin-top:20%;
+    padding-bottom:20%;
+    font-size:20pt;
+
+}
+#from, #to {
+    display:inline-block;
+    float:left;
+}
+.filterBox-gorizontal {
+    display:none;
+    width:100%;
+    height:100pt;
 }
